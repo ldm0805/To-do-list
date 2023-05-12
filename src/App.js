@@ -1,7 +1,9 @@
+//Importo l'oggetto react
+// import React from "react";
 // App principale
 // Importo il componente
-import Expenses from "./components/Expenses";
-import "./components/Expenses.css";
+import Expenses from "./components/Expenses/Expenses";
+import "./components/Expenses/Expenses.css";
 
 const expenses = [
   {
@@ -31,6 +33,15 @@ const expenses = [
 ];
 
 function App() {
+  //Esempio con l'oggetto React, importato sopra
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
+  //JSX
   return (
     <div>
       <h2>Let's get started!</h2>
