@@ -2,7 +2,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 //Importo la personalizzazione
-import "./ExpenseItem.css";
+import "./ExpenseItem.scss";
 // Componente
 //Aggiungiamo il parametro props(oggetto) per aggiungere i parametri delle props
 const ExpanseItem = (props) => {

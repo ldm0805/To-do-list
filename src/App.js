@@ -3,7 +3,7 @@
 // App principale
 // Importo il componente
 import Expenses from "./components/Expenses/Expenses";
-import "./components/Expenses/Expenses.css";
+import "./components/Expenses/Expenses.scss";
 
 const expenses = [
   {
