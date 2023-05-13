@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 // Componente
 //Aggiungiamo il parametro props(oggetto) per aggiungere i parametri delle props
-function ExpanseItem(props) {
+const ExpanseItem = (props) => {
   return (
     <Card className="expense-item">
       <ExpenseDate
@@ -19,7 +19,7 @@ function ExpanseItem(props) {
       </div>
     </Card>
   );
-}
+};
 export default ExpanseItem;
 
 // Nel return ci deve essere solo un'elemento, in questo caso ritorna un solo div che al suo interno ha altri elementi.

@@ -32,7 +32,7 @@ const expenses = [
   },
 ];
 
-function App() {
+const App = () => {
   //Esempio con l'oggetto React, importato sopra
   // return React.createElement(
   //   "div",
@@ -50,6 +50,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
