@@ -4,6 +4,7 @@
 // Importo il componente
 import Expenses from "./components/Expenses/Expenses";
 import "./components/Expenses/Expenses.scss";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const expenses = [
   {
@@ -44,7 +45,7 @@ const App = () => {
   //JSX
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <div>
         <Expenses items={expenses}></Expenses>
       </div>
