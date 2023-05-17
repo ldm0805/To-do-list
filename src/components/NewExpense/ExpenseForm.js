@@ -2,39 +2,50 @@ import { useState } from "react";
 import "./ExpenseForm.scss";
 
 const ExpenseForm = () => {
-  // const [enteredTitle, setEnteredTitle] = useState("");
-  // const [enteredAmount, setEnteredAmount] = useState("");
-  // const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
 
   //Titolo
   const titleChangeHandler = (event) => {
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
-    });
+    setEnteredTitle(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
   };
+
+  //Quando facciamo l'update di uno state esistente, conviene usare questa sintassi:
+  //Entrambi funzionano, ma il primo metodo potrebbe creare problemi quando si ha già uno state esistente e lo si deve sovrascrivere.
+  // const titleChangeHandler = (event) => {
+  //   setUserInput((prevState) => {
+  //     return { ...prevState, enteredTitle: event.target.value };
+  //   });
+  // };
 
   //Amount
   const amountChangeHandler = (event) => {
-    setUserInput({
-      //Spread operator
-      ...userInput,
-      enteredAmount: event.target.value,
-    });
+    setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   //Spread operator
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
   };
 
   //Data
   const dateChangeHandler = (event) => {
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value,
-    });
+    setEnteredDate(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
   };
 
   return (
