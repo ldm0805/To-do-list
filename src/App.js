@@ -33,6 +33,11 @@ const expenses = [
   },
 ];
 
+const addExpenseHandler = (expense) => {
+  console.log("in app.js");
+  console.log(expenses);
+};
+
 const App = () => {
   //Esempio con l'oggetto React, importato sopra
   // return React.createElement(
@@ -45,7 +50,7 @@ const App = () => {
   //JSX
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpanse={addExpenseHandler} />
       <div>
         <Expenses items={expenses}></Expenses>
       </div>
