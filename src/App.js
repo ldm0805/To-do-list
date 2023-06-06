@@ -1,12 +1,12 @@
 //Importo l'oggetto react
-// import React from "react";
+import React, { useState } from "react";
 // App principale
 // Importo il componente
 import Expenses from "./components/Expenses/Expenses";
 import "./components/Expenses/Expenses.scss";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const expenses = [
+const DUMMY_EXPENSES = [
   {
     id: "e1",
     title: "Toilet Paper",
@@ -33,12 +33,14 @@ const expenses = [
   },
 ];
 
-const addExpenseHandler = (expense) => {
-  console.log("in app.js");
-  console.log(expenses);
-};
-
 const App = () => {
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+  };
+
   //Esempio con l'oggetto React, importato sopra
   // return React.createElement(
   //   "div",
