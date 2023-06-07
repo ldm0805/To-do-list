@@ -11,20 +11,34 @@ const Expenses = (props) => {
     // console.log("expense.js");
     // console.log(selectedYear);
   };
+
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <Card className="expenses">
       <ExpensesFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {/* Array di expense dinamico con metodo map (Da array di oggetti ad array di jsx element)*/}
-      {props.items.map((expense) => (
-        <ExpenseItem
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+
+      {/* Condizioni se in quell'anno non ci sono expense*/}
+
+      {filteredExpenses.length === 0 ? (
+        <p>No expenses found</p>
+      ) : (
+        filteredExpenses.map((expense) => (
+          <ExpenseItem
+            // Aggiungo la key per aiutare la renderizzazione di react
+            // Array di expense dinamico con metodo map (Da array di oggetti ad array di jsx element)
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))
+      )}
     </Card>
   );
 };
